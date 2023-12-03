@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "extends": ["airbnb", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["dist", "vite.config.ts"],
+  "rules": {
+    "arrow-body-style": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/function-component-definition": "off"
+  }
+}
