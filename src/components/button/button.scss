@@ -1,0 +1,11 @@
+.Button {
+  padding: 16px;
+  box-sizing: border-box;
+
+  color: var(--color_button_primary_foreground);
+  background-color: var(--color_button_primary_background);
+
+  &-stretched {
+    width: 100%;
+  }
+}

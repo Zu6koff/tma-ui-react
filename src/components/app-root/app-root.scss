@@ -1,0 +1,9 @@
+.AppRoot {
+  block-size: 100%;
+}
+
+@media (hover: none) {
+  .AppRoot {
+    user-select: none;
+  }
+}

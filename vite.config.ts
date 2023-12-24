@@ -12,9 +12,10 @@ import {fileURLToPath} from 'url';
 export default defineConfig({
   plugins: [
     react(),
-    dts(),
+    dts({ exclude: ['src/**/*.stories.tsx']}),
     libInjectCss()
   ],
+  assetsInclude: ['/sb-preview/runtime.js'],
   build: {
     emptyOutDir: true,
     lib: {
@@ -22,9 +23,14 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       input: Object.fromEntries(
-      glob.sync('src/**/*.{ts,tsx}').map(file => [
+      glob.sync('src/**/*.{ts,tsx}', {
+        ignore: [
+          'src/vite-env.d.ts',
+          'src/**/*.stories.tsx'
+        ]
+      }).map(file => [
         relative(
           'src',
           file.slice(0, file.length - extname(file).length)
@@ -38,6 +44,7 @@ export default defineConfig({
         "react-dom": "ReactDOM",
       },
       assetFileNames: 'assets/[name][extname]',
+      chunkFileNames: '[name].js',
       entryFileNames: '[name].js',
     },
     },
