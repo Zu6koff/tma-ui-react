@@ -5,15 +5,15 @@ import { ConfigProvider, AppRoot } from '../src';
 import '../src/assets/index.scss';
 
 export const globalTypes: Preview['globalTypes'] = {
-  platform: {
-    name: "Platform",
-    defaultValue: "ios",
-    toolbar: {
-      icon: "tablet",
-      items: ["ios", "android"],
-      dynamicTitle: true,
-    },
-  },
+  // platform: {
+  //   name: "Platform",
+  //   defaultValue: "ios",
+  //   toolbar: {
+  //     icon: "tablet",
+  //     items: ["ios", "android"],
+  //     dynamicTitle: true,
+  //   },
+  // },
   appearance: {
     name: "Appearance",
     defaultValue: "light",
@@ -55,12 +55,19 @@ export const parameters: Parameters = {
     viewports: MINIMAL_VIEWPORTS,
     defaultViewport: "mobile1",
   },
+  options: {
+    storySort: {
+      order: [
+        'Typography',
+        ['Title', 'Headline', 'Body', 'Callout', 'Subheadline', 'Footnote', 'Caption'],
+        'UI'
+      ]
+    },
+  },
 };
 
 const withTMAUIWrapper = (Story, context) => {
   const { appearance, platform } = context.globals;
-
-  console.log(context);
 
   return (
     <ConfigProvider appearance={appearance}>

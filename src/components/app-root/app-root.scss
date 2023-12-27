@@ -1,5 +1,8 @@
 .AppRoot {
   block-size: 100%;
+
+  font-family: var(--font_family_base);
+  color: var(--color_text_primary);
 }
 
 @media (hover: none) {

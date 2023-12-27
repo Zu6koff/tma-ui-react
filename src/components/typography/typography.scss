@@ -1,0 +1,24 @@
+.Typography {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  &_caps {
+    text-transform: uppercase;
+  }
+}
+
+.Typography_weight {
+  &_1 {
+    font-weight: 700;
+  }
+  &_2 {
+    font-weight: 600;
+  }
+  &_3 {
+    font-weight: 500;
+  }
+  &_4 {
+    font-weight: 400;
+  }
+}

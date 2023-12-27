@@ -1,11 +1,39 @@
 .Button {
-  padding: 16px;
+  padding: 14px 24px;
   box-sizing: border-box;
+  border-radius: 12px;
 
   color: var(--color_button_primary_foreground);
   background-color: var(--color_button_primary_background);
 
-  &-stretched {
+  &-In {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-Before {
+    margin-right: 6px;
+  }
+
+  &-Content {
+
+  }
+
+  &-After{
+    margin-left: 6px;
+  }
+
+  &_stretched {
     width: 100%;
+  }
+
+  &_multiline {
+
+  }
+
+  &_disabled {
+
   }
 }
